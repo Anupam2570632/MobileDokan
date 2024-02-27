@@ -1,18 +1,42 @@
 const dataLoad = async (phoneName) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${phoneName}`);
     const data = await res.json();
-    showData(data.data);
+    showData(data.data, true);
+    return data;
 }
 
 
-const showData = (phones) => {
+const showData = (phones, showAll) => {
     console.log(phones);
 
     const phoneContainer = document.getElementById('phone-container');
 
     phoneContainer.innerHTML = '';
+    const phoneSection = document.getElementById('phones-section');
+    phoneSection.innerHTML = '';
 
-    phones = phones.slice(0, 12);
+    if (phones.length === 0) {
+        const div = document.createElement('div');
+        div.innerHTML = `
+        <h1 class="text-center text-4xl font-bold py-4 mb-10 text-red-400 ">This phone is not available here...</h1>
+        `
+        phoneSection.appendChild(div);
+    }
+
+    const showAllBtn = document.getElementById('show-all-btn');
+    if (phones.length > 12) {
+    }
+    else {
+    }
+
+    if (showAll && phones.length > 12) {
+        phones = phones.slice(0, 12);
+        showAllBtn.classList.remove('hidden');
+
+    }
+    else {
+        showAllBtn.classList.add('hidden');
+    }
 
     phones.forEach(phone => {
         const card = document.createElement('div');
@@ -29,7 +53,7 @@ const showData = (phones) => {
                         <h2 class="text-black font-bold text-[20px] " >
                             $999
                         </h2>
-                        <button class="px-6 py-2 bg-[#0D6EFD] text-white font-bold rounded-lg">
+                        <button class="px-6 py-3 bg-[#0D6EFD] text-white font-bold rounded-lg">
                             Show Details
                         </button>
                     </div>
@@ -51,7 +75,23 @@ const searchPhone = () => {
 const pageLoad = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/phones?search=samsung');
     const data = await res.json();
-    showData(data.data);
-    console.log(data.data)
+    showData(data.data, true);
 }
 pageLoad();
+
+let showAll = true;
+const showAllPhone = async () => {
+    const inputField = document.getElementById('input-field');
+    const inputText = inputField.value;
+    let data;
+    if (inputText === '') {
+        data = await dataLoad('samsung');
+
+    }
+    else {
+        data = await dataLoad(inputText);
+    }
+    showAll = false;
+    showData(data.data, showAll)
+}
+

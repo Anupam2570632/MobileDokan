@@ -14,9 +14,9 @@
             font-family: "Poppins", sans-serif;
         }
 
-        .card:hover .phoneImg{
+        .card:hover .phoneImg {
             transform: scale(1.1);
-            transition-duration: 400ms;
+            transition: ease-in-out 400ms;
         }
     </style>
 </head>
@@ -35,19 +35,19 @@
 
         <!-- banner section -->
         <section class="relative bg-[#0D6EFD0D]">
-            <div class=" w-11/12 lg:w-9/12 mx-auto space-y-10 pb-[50vw] text-center">
-                <h1 class="text-2xl md:text-[65px] font-bold text-center text-[Dark 01]">
+            <div class=" w-11/12 lg:w-9/12 mx-auto space-y-10 pb-[30vw] text-center">
+                <h1 class="text-2xl md:text-[65px] font-bold text-center text-[#100F0F]">
                     Apple Iphone 13 Pro Max
                 </h1>
                 <p class="text-[18px] text-[Dark 03] max-w-[700px] text-center mx-auto">
                     There are many variations of passages of Lorem Ipsum available, but the majority have suffered
                     alteration in some form, by injected human.
                 </p>
-                <button class="px-10 py-4 bg-[#0D6EFD] rounded-lg text-white text-[20px] font-bold" >
+                <button class="px-10 py-4 bg-[#0D6EFD] rounded-lg text-white text-[20px] font-bold">
                     <a href="#phone-container">Buy Now</a>
                 </button>
             </div>
-            <div class="flex absolute items-end bottom-0 left-[17%]">
+            <div class="flex absolute items-end bottom-[-19vw] left-[17%]">
 
                 <img class="h-[35vw]" src="./pngwing 1.png" alt="">
                 <img class="h-[45vw]" src="./pngwing 1.png" alt="">
@@ -57,8 +57,8 @@
 
 
         <!-- search section -->
-        <section class="w-11/12 lg:w-9/12 mx-auto py-20 space-y-8">
-            <h2 class="text-4xl font-semibold text-[#100F0F] text-center ">Search your phone</h2>
+        <section class="w-11/12 lg:w-9/12 mx-auto pb-20 mt-[25vw] space-y-4 md:space-y-8">
+            <h2 class="text-2xl md:text-4xl font-semibold text-[#100F0F] text-center ">Search your phone</h2>
             <div class="flex flex-col md:flex-row items-center justify-center gap-2">
                 <input id="input-field" type="text" placeholder="Search your phone"
                     class="input input-bordered input-info max-w-[500px]" />
@@ -69,10 +69,17 @@
 
 
         <!-- phone section -->
-        <section class="w-11/12 lg:w-9/12 mx-auto">
+        <section class="w-11/12 lg:w-9/12 mx-auto text-center">
+            <div id="phones-section">
+
+            </div>
             <div id="phone-container" class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
             </div>
+            
+            <button  onclick="showAllPhone()" id="show-all-btn" class="hidden px-8 py-3 text-white font-bold my-10 bg-cyan-600 rounded-lg">
+                Show all
+            </button>
         </section>
     </main>
 
