@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Hunter</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-[#0D6EFD0D] pb-20">
+        <div class="flex w-11/12 py-10 lg:w-9/12 mx-auto items-center justify-between">
+            <h1 class="md:text-3xl text-[20px] font-bold text-[#403F3F]">Hot Gadgets</h1>
+            <button
+                class="md:text-[20px] font-bold text-white px-6 py-2 text-[16px] md:px-10 md:py-4 bg-[#0D6EFD] rounded-lg hover:bg-[#0D4EFE] border-none">Sign
+                Up</button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- banner section -->
+        <section class="relative bg-[#0D6EFD0D]">
+            <div class=" w-11/12 lg:w-9/12 mx-auto space-y-6 pb-[50vw] text-center">
+                <h1 class="text-2xl md:text-[65px] font-bold text-center text-[Dark 01]">
+                    Apple Iphone 13 Pro Max
+                </h1>
+                <p class="text-[18px] text-[Dark 03] max-w-[700px] text-center mx-auto">
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                    alteration in some form, by injected human.
+                </p>
+                <button class="px-10 py-4 bg-[#0D6EFD] rounded-lg text-white text-[20px] font-bold" >
+                    <a href="#phone-container">Buy Now</a>
+                </button>
+            </div>
+            <div class="flex absolute items-end bottom-0 left-[17%]">
+
+                <img class="h-[35vw]" src="./pngwing 1.png" alt="">
+                <img class="h-[45vw]" src="./pngwing 1.png" alt="">
+                <img class="h-[35vw]" src="./pngwing 1.png" alt="">
+            </div>
+        </section>
+
+
+        <!-- search section -->
+        <section class="w-11/12 lg:w-9/12 mx-auto py-20 space-y-8">
+            <h2 class="text-4xl font-semibold text-[#100F0F] text-center ">Search your phone</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-2">
+                <input id="input-field" type="text" placeholder="Search your phone"
+                    class="input input-bordered input-info max-w-[500px]" />
+                <button onclick="searchPhone()"
+                    class="text-[20px] font-bold text-white px-6 py-2 bg-[#0D6EFD] rounded-lg">Search</button>
+            </div>
+        </section>
+
+
+        <!-- phone section -->
+        <section class="w-11/12 lg:w-9/12 mx-auto">
+            <div id="phone-container" class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
