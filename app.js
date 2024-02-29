@@ -5,9 +5,12 @@ const dataLoad = async (phoneName) => {
     return data;
 }
 
+dataLoad('samsung',true);
 
 const showData = (phones, showAll) => {
     console.log(phones);
+
+    document.getElementById('loading-spinner').classList.remove('hidden');
 
     const phoneContainer = document.getElementById('phone-container');
 
@@ -17,6 +20,7 @@ const showData = (phones, showAll) => {
 
     if (phones.length === 0) {
         const div = document.createElement('div');
+        document.getElementById('loading-spinner').classList.add('hidden');
         div.innerHTML = `
         <h1 class="text-center text-4xl font-bold py-4 mb-10 text-red-400 ">This phone is not available here...</h1>
         `
@@ -24,21 +28,18 @@ const showData = (phones, showAll) => {
     }
 
     const showAllBtn = document.getElementById('show-all-btn');
-    if (phones.length > 12) {
-    }
-    else {
-    }
 
     if (showAll && phones.length > 12) {
         phones = phones.slice(0, 12);
         showAllBtn.classList.remove('hidden');
-
     }
     else {
         showAllBtn.classList.add('hidden');
     }
 
     phones.forEach(phone => {
+
+        document.getElementById('loading-spinner').classList.add('hidden');
         const card = document.createElement('div');
         card.innerHTML = `
         <div class="card overflow-hidden border  py-10 border-gray-300 space-y-2 text-center">
@@ -72,12 +73,6 @@ const searchPhone = () => {
     dataLoad(inputText);
 }
 
-const pageLoad = async () => {
-    const res = await fetch('https://openapi.programming-hero.com/api/phones?search=samsung');
-    const data = await res.json();
-    showData(data.data, true);
-}
-pageLoad();
 
 let showAll = true;
 const showAllPhone = async () => {
