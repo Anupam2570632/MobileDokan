@@ -53,7 +53,7 @@ const showData = (phones, showAll) => {
                         <h2 class="text-black font-bold text-[20px] " >
                             $999
                         </h2>
-                        <button class="px-6 py-3 bg-[#0D6EFD] text-white font-bold rounded-lg">
+                        <button onclick="showDetails('${phone.slug}')" class="px-6 py-3 bg-[#0D6EFD] text-white font-bold rounded-lg">
                             Show Details
                         </button>
                     </div>
@@ -95,3 +95,42 @@ const showAllPhone = async () => {
     showData(data.data, showAll)
 }
 
+const phoneDetails = async (id) => {
+    const detailsData = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
+    const data = await detailsData.json();
+
+    console.log(data.data)
+    showPhoneDetails(data.data)
+    my_modal_4.showModal();
+}
+
+
+const showDetails = (id) => {
+    phoneDetails(id);
+}
+
+const showPhoneDetails = (phone) => {
+    const modal = document.getElementById('modal');
+    modal.innerHTML = `
+    <div class="flex flex-col items-start justify-center gap-4 p-4">
+    <div class="flex justify-center items-center w-full">
+    <img class="" src="${phone.image}" alt="">
+    </div>
+    <h1>${phone.name}</h1>
+    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+    <h2>Storage : ${phone.mainFeatures.storage}</h2>
+    <h2>Display size : ${phone.mainFeatures.displaySize}</h2>
+    <h2>ChipSet : ${phone?.mainFeatures?.chipSet}</h2>
+    <h2>Memory : ${phone.mainFeatures.memory}</h2>
+    <h2>Slug : ${phone.slug}</h2>
+    <h2>Release Date : ${phone.releaseDate}</h2>
+    <h2>Brand : ${phone.brand}</h2>
+    <h2>GPS : ${phone?.others?.GPS}</h2>
+    </div>
+    `
+}
+
+
+// const closeModal = () => {
+//     document.getElementById('my_modal_2').classList.add('hidden');
+// }
