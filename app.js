@@ -5,7 +5,7 @@ const dataLoad = async (phoneName) => {
     return data;
 }
 
-dataLoad('samsung',true);
+dataLoad('samsung', true);
 
 const showData = (phones, showAll) => {
     console.log(phones);
@@ -111,16 +111,16 @@ const showPhoneDetails = (phone) => {
     <div class="flex justify-center items-center w-full">
     <img class="" src="${phone.image}" alt="">
     </div>
-    <h1>${phone.name}</h1>
-    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-    <h2>Storage : ${phone.mainFeatures.storage}</h2>
-    <h2>Display size : ${phone.mainFeatures.displaySize}</h2>
-    <h2>ChipSet : ${phone?.mainFeatures?.chipSet}</h2>
-    <h2>Memory : ${phone.mainFeatures.memory}</h2>
-    <h2>Slug : ${phone.slug}</h2>
-    <h2>Release Date : ${phone.releaseDate}</h2>
-    <h2>Brand : ${phone.brand}</h2>
-    <h2>GPS : ${phone?.others?.GPS}</h2>
+    <h1 class="text-[#403F3F] font-bold text-[30px]">${phone.name}</h1>
+    <p class="text-[#706F6F]">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+    <h2  class="text-[#706F6F] text-[20px]"><span class="text-[#403F3F] font-semibold">Storage : </span>${phone.mainFeatures.storage}</h2>
+    <h2  class="text-[#706F6F] text-[20px]"><span class="text-[#403F3F] font-semibold">Display size : </span>${phone.mainFeatures.displaySize}</h2>
+    <h2  class="text-[#706F6F] text-[20px]"><span class="text-[#403F3F] font-semibold">ChipSet : </span>${phone?.mainFeatures?.chipSet}</h2>
+    <h2  class="text-[#706F6F] text-[20px]"><span class="text-[#403F3F] font-semibold">Memory : </span>${phone.mainFeatures.memory}</h2>
+    <h2  class="text-[#706F6F] text-[20px]"><span class="text-[#403F3F] font-semibold">Slug : </span>${phone.slug}</h2>
+    <h2  class="text-[#706F6F] text-[20px]"><span class="text-[#403F3F] font-semibold">Release Date : </span>${phone.releaseDate}</h2>
+    <h2  class="text-[#706F6F] text-[20px]"><span class="text-[#403F3F] font-semibold">Brand : </span>${phone.brand}</h2>
+    <h2  class="text-[#706F6F] text-[20px]"><span class="text-[#403F3F] font-semibold">GPS : </span>${phone?.others?.GPS}</h2>
     </div>
     `
 }
